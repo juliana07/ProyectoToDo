@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <title>GESTOR DE TAREAS</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <header class="text-center text-light my-4">
+
+                <h2 class="mb-4">Bienvenido a tu Gestor de Tareas</h2>
+                <div style="float:left;font-size:15px;">
+                    <script>
+                        //<![CDATA[
+                        var date = new Date();
+                        var d  = date.getDate();
+                        var day = (d < 10) ? '0' + d : d;
+                        var m = date.getMonth() + 1;
+                        var month = (m < 10) ? '0' + m : m;
+                        var yy = date.getYear();
+                        var year = (yy < 1000) ? yy + 1900 : yy;
+                        document.write("Fecha: "+ day + "/" + month + "/" + year);
+                      function startTime()
+                      {
+                           today=new Date();
+                            h=today.getHours();
+                            m=today.getMinutes();
+                            s=today.getSeconds();
+                            m=checkTime(m);
+                            s=checkTime(s);
+                            document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
+                            t=setTimeout('startTime()',500);}
+                            function checkTime(i)
+                            {
+                                if (i<10) {i="0" + i;}return i;
+                            }
+                        window.onload=function(){startTime();
+                        }
+                    //]]> 
+                    </script>  
+                </div> 
+                <div id="reloj" style="float:right;font-size:15px;"></div> 
+
+                <br><br>
+
+                <form class="search">
+                    <input type="text" class="form-control" name="search" placeholder="Buscar">
+                </form>
+
+            </header>
+
+            <ul class="list-group text-light to-dos">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>07-02-23 Entregar proyecto de Desarrollo Humano</span>
+                    <i class="far fa-trash-alt delete"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>05-02-23 Estudiar para examen de Cálculo</span>
+                    <i class="far fa-trash-alt delete"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>31-01-23 Preparar la exposición de Inglés</span>
+                    <i class="far fa-trash-alt delete"></i>
+                </li>
+            </ul>
+
+            <form class="add text-center my-4">
+                <label for="" class="text-light">Crear tareas:</label>
+                <input type="text" class="form-control" name="add" placeholder="Agrega una tarea aquí">
+            </form>
+
+        </div>
+        <script src="main.js"></script>
+    </body>
+
+</html>

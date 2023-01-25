@@ -1,0 +1,51 @@
+
+:root {
+    --primary: #b56a65;
+    --secondary: #d5a57f;
+    --light: #fff;
+    --dark: #000;
+    --diabled: #e7e7e7;
+}
+
+
+body {
+    background-color: #e9d7a9;
+    background-image: linear-gradient(19deg, #d5a57f 0%, #b56a65 100%);
+    height: 100vh;
+    font-family: Tahoma;
+    font-size: 13px;
+}
+
+.container {
+    max-width: 700px;
+}
+
+input[type=text],
+input[type=text]:focus {
+    color: #fff;
+    border: none;
+    background: #4b3132;
+}
+
+.to-dos li {
+    background: #d2d09f;
+    font-family: Verdana;
+    font-style: oblique;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.filteredOut {
+    display: none;
+}
+
+.done {
+    text-decoration: line-through;
+    color: var(--dark);
+}
+
+h2{
+    padding-top: 5%;
+}
